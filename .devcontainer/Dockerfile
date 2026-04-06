@@ -27,6 +27,7 @@ RUN bash <<-"EOD"
 EOD
 
 RUN dotnet completions script bash > /etc/bash_completion.d/dotnet-completions.bash
+RUN dotnet workload update
 
 RUN userdel --remove ubuntu
 ARG DOCKER_GID
