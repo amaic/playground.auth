@@ -1,0 +1,24 @@
+{
+    "name": "auth",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "DOCKER_GID": "118"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csdevkit",
+                "redhat.vscode-xml",
+                "Gruntfuggly.todo-tree",
+                "ms-azuretools.vscode-containers"
+            ]
+        }
+    },
+    "mounts": [
+        "source=/usr/bin/docker,target=/usr/bin/docker,type=bind",
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ]
+}
