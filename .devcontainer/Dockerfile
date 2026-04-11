@@ -30,9 +30,7 @@ RUN dotnet completions script bash > /etc/bash_completion.d/dotnet-completions.b
 RUN dotnet workload update
 
 RUN userdel --remove ubuntu
-ARG DOCKER_GID
-RUN groupadd --gid ${DOCKER_GID} docker
-RUN useradd --create-home --uid 1000 --shell /bin/bash --groups sudo,docker vscode
+RUN useradd --create-home --uid 1000 --shell /bin/bash --groups sudo vscode
 RUN echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER vscode
